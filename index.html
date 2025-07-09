@@ -582,8 +582,158 @@ server.listen(3000, () => {
     feedbackEl.textContent = '';
     submitBtn.disabled = true;
     optionsEl.innerHTML = '';
+<section id="quiz" class="quiz-section">
+  <h2>Quiz Interativo - Teste seus conhecimentos!</h2>
+  <div id="quiz-container">
+    <div id="question"></div>
+    <div id="options"></div>
+    <button id="submit-btn" disabled>Responder</button>
+    <div id="feedback"></div>
+  </div>
+  <div id="result" style="display:none;">
+    <h3>Você acertou <span id="score"></span> de <span id="total"></span> perguntas!</h3>
+    <button id="restart-btn">Refazer Quiz</button>
+  </div>
+</section>
+
+<style>
+  .quiz-section {
+    background-color: #1e1e2f;
+    color: #ddd;
+    padding: 25px 30px;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: 50px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .quiz-section h2 {
+    text-align: center;
+    color: #8257e5;
+    margin-bottom: 20px;
+  }
+
+  #question {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+  }
+
+  #options label {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  #submit-btn,
+  #restart-btn {
+    background-color: #8257e5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+
+  #submit-btn:disabled {
+    background-color: #444;
+    cursor: not-allowed;
+  }
+
+  #feedback {
+    margin-top: 15px;
+    font-weight: bold;
+  }
+</style>
+
+<script>
+  const quizData = [
+    {
+      question: "O que é uma variável em programação?",
+      options: [
+        "Um tipo de dado numérico",
+        "Um espaço para guardar informações",
+        "Uma função que retorna valores",
+        "Um operador matemático"
+      ],
+      answer: 1
+    },
+    {
+      question: "Qual dessas linguagens é usada para estilizar páginas web?",
+      options: ["HTML", "JavaScript", "CSS", "Python"],
+      answer: 2
+    },
+    {
+      question: "Para que serve o Git?",
+      options: [
+        "Para escrever código HTML",
+        "Para controle de versão do código",
+        "Para executar programas",
+        "Para desenhar imagens"
+      ],
+      answer: 1
+    },
+    {
+      question: "Qual tag HTML é usada para criar um link?",
+      options: ["<a>", "<link>", "<href>", "<url>"],
+      answer: 0
+    },
+    {
+      question: "Qual propriedade CSS altera a cor do texto?",
+      options: ["background-color", "font-size", "color", "text-align"],
+      answer: 2
+    },
+    {
+      question: "Qual comando Git adiciona arquivos para o próximo commit?",
+      options: ["git commit", "git push", "git add", "git pull"],
+      answer: 2
+    },
+    {
+      question: "Em JavaScript, qual palavra-chave declara uma variável?",
+      options: ["var", "define", "letit", "consta"],
+      answer: 0
+    },
+    {
+      question: "O que significa “HTML”?",
+      options: [
+        "HyperText Markup Language",
+        "Hyperlink and Text Markup Language",
+        "Hyperlinking Text Mark Language",
+        "HyperText Markdown Language"
+      ],
+      answer: 0
+    },
+    {
+      question: "Qual método JavaScript é usado para mostrar mensagens no console?",
+      options: ["console.write()", "console.log()", "print()", "alert()"],
+      answer: 1
+    },
+    {
+      question: "Qual dos seguintes não é um tipo de dado em JavaScript?",
+      options: ["String", "Number", "Boolean", "Character"],
+      answer: 3
+    }
+  ];
+
+  let currentQuestion = 0;
+  let score = 0;
+
+  const questionEl = document.getElementById('question');
+  const optionsEl = document.getElementById('options');
+  const submitBtn = document.getElementById('submit-btn');
+  const feedbackEl = document.getElementById('feedback');
+  const resultEl = document.getElementById('result');
+  const scoreEl = document.getElementById('score');
+  const totalEl = document.getElementById('total');
+  const restartBtn = document.getElementById('restart-btn');
+
+  function loadQuestion() {
+    feedbackEl.textContent = '';
+    submitBtn.disabled = true;
+    optionsEl.innerHTML = '';
+
     const q = quizData[currentQuestion];
-    questionEl.textContent = q.question;
+    questionEl.textContent = `(${currentQuestion + 1}/${quizData.length}) ${q.question}`;
 
     q.options.forEach((option, index) => {
       const label = document.createElement('label');
@@ -640,46 +790,6 @@ server.listen(3000, () => {
     document.getElementById('quiz-container').style.display = 'block';
     loadQuestion();
   });
-{
-  question: "Qual tag HTML é usada para criar um link?",
-  options: ["<a>", "<link>", "<href>", "<url>"],
-  answer: 0
-},
-{
-  question: "Qual propriedade CSS altera a cor do texto?",
-  options: ["background-color", "font-size", "color", "text-align"],
-  answer: 2
-},
-{
-  question: "Qual comando Git adiciona arquivos para o próximo commit?",
-  options: ["git commit", "git push", "git add", "git pull"],
-  answer: 2
-},
-{
-  question: "Em JavaScript, qual palavra-chave declara uma variável?",
-  options: ["var", "define", "letit", "consta"],
-  answer: 0
-},
-{
-  question: "O que significa “HTML”?",
-  options: [
-    "HyperText Markup Language",
-    "Hyperlink and Text Markup Language",
-    "Hyperlinking Text Mark Language",
-    "HyperText Markdown Language"
-  ],
-  answer: 0
-},
-{
-  question: "Qual método JavaScript é usado para mostrar mensagens no console?",
-  options: ["console.write()", "console.log()", "print()", "alert()"],
-  answer: 1
-},
-{
-  question: "Qual dos seguintes não é um tipo de dado em JavaScript?",
-  options: ["String", "Number", "Boolean", "Character"],
-  answer: 3
-}
-  
+
   loadQuestion();
 </script>
