@@ -178,3 +178,109 @@ git push origin main
   <script src="script.js"></script>
 </body>
 </html>
+
+<li>
+  <button class="accordion">Módulo 6: JavaScript Avançado</button>
+  <div class="panel">
+    <h3>Funções Avançadas</h3>
+    <p>Aprenda funções de ordem superior e closures.</p>
+    <pre><code>
+// Função que retorna outra função
+function saudacaoPersonalizada(nome) {
+  return function() {
+    console.log("Olá, " + nome + "!");
+  };
+}
+
+const olaAna = saudacaoPersonalizada("Ana");
+olaAna(); // Olá, Ana!
+    </code></pre>
+
+    <h3>Arrow Functions</h3>
+    <pre><code>
+const soma = (a, b) => a + b;
+console.log(soma(3, 4)); // 7
+    </code></pre>
+  </div>
+</li>
+
+<li>
+  <button class="accordion">Módulo 7: Manipulação Avançada do DOM</button>
+  <div class="panel">
+    <h3>Selecionar Elementos</h3>
+    <p>Usando querySelector e querySelectorAll.</p>
+    <pre><code>
+const btn = document.querySelector("button");
+const itens = document.querySelectorAll(".item");
+    </code></pre>
+
+    <h3>Criar e Remover Elementos</h3>
+    <pre><code>
+// Criar um novo parágrafo
+const p = document.createElement("p");
+p.textContent = "Novo parágrafo";
+document.body.appendChild(p);
+
+// Remover um elemento
+const elemento = document.getElementById("remover");
+elemento.remove();
+    </code></pre>
+  </div>
+</li>
+
+<li>
+  <button class="accordion">Módulo 8: Consumo de APIs</button>
+  <div class="panel">
+    <h3>O que são APIs?</h3>
+    <p>APIs permitem que seu programa se comunique com outros serviços.</p>
+
+    <h3>Usando fetch para consumir API</h3>
+    <pre><code>
+fetch("https://api.exemplo.com/dados")
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => console.error(error));
+    </code></pre>
+  </div>
+</li>
+
+<li>
+  <button class="accordion">Módulo 9: Introdução ao Backend</button>
+  <div class="panel">
+    <h3>O que é Backend?</h3>
+    <p>Parte do site ou app que roda no servidor e cuida de dados, segurança e regras.</p>
+
+    <h3>Exemplo básico com Node.js</h3>
+    <pre><code>
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Olá, mundo do backend!');
+});
+
+server.listen(3000, () => {
+  console.log('Servidor rodando na porta 3000');
+});
+    </code></pre>
+  </div>
+</li>
+
+<li>
+  <button class="accordion">Módulo 10: Projeto Final Avançado</button>
+  <div class="panel">
+    <h3>Objetivo</h3>
+    <p>Crie um projeto completo que envolva frontend, backend e consumo de APIs.</p>
+
+    <h3>Dicas para o projeto</h3>
+    <ul>
+      <li>Planeje funcionalidades</li>
+      <li>Use Git para controle de versão</li>
+      <li>Implemente interatividade no frontend</li>
+      <li>Consuma APIs externas</li>
+      <li>Hospede seu projeto online (GitHub Pages, Heroku, etc.)</li>
+    </ul>
+  </div>
+</li>
