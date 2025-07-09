@@ -1,114 +1,160 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Programação: Do Nood ao Mestre</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Programação: Do Nood ao Mestre</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Programação: Do Nood ao Mestre</h1>
-    <p>Domine a programação do zero até o nível avançado</p>
-  </header>
+  <header>
+    <h1>Programação: Do Nood ao Mestre</h1>
+    <p>Domine a programação do zero até o nível avançado</p>
+  </header>
 
-  <main>
-    <section class="modules">
-      <h2>Módulos do Curso</h2>
-      <ul id="modulesList">
+  <main>
+    <section class="modules">
+      <h2>Módulos do Curso</h2>
+      <ul id="modulesList">
 
-        <!-- Módulos 1 a 5 -->
-        <li>
-          <button class="accordion">Módulo 1: Lógica de Programação</button>
-          <div class="panel">
-            <!-- conteúdo do módulo 1 -->
-            <h3>O que é Programação?</h3>
-            <p>Programação é o processo de criar um conjunto de instruções que dizem ao computador o que fazer.</p>
-            <!-- resto do conteúdo do módulo 1 aqui... -->
-          </div>
-        </li>
+        <!-- Módulo 1 -->
+        <li>
+          <button class="accordion">Módulo 1: Lógica de Programação</button>
+          <div class="panel">
+            <h3>O que é Programação?</h3>
+            <p>Programação é o processo de criar um conjunto de instruções que dizem ao computador o que fazer.</p>
 
-        <li>
-          <button class="accordion">Módulo 2: HTML e CSS</button>
-          <div class="panel">
-            <!-- conteúdo do módulo 2 -->
-          </div>
-        </li>
+            <h3>Variáveis e Tipos de Dados</h3>
+            <p>Variáveis são como caixas que guardam informações. Exemplos de tipos:</p>
+            <ul>
+              <li><strong>Number:</strong> Números, como 10, 3.14</li>
+              <li><strong>String:</strong> Texto, como "Olá Mundo"</li>
+              <li><strong>Boolean:</strong> Verdadeiro (true) ou falso (false)</li>
+            </ul>
 
-        <li>
-          <button class="accordion">Módulo 3: JavaScript</button>
-          <div class="panel">
-            <!-- conteúdo do módulo 3 -->
-          </div>
-        </li>
+            <h3>Exemplo de código em JavaScript</h3>
+            <pre><code>
+let idade = 14;
+let nome = "Ana";
+let maiorDeIdade = false;
 
-        <li>
-          <button class="accordion">Módulo 4: Git e GitHub</button>
-          <div class="panel">
-            <!-- conteúdo do módulo 4 -->
-          </div>
-        </li>
+console.log("Nome:", nome);
+console.log("Idade:", idade);
+console.log("É maior de idade?", maiorDeIdade);
+            </code></pre>
 
-        <li>
-          <button class="accordion">Módulo 5: Projeto Final</button>
-          <div class="panel">
-            <!-- conteúdo do módulo 5 -->
-          </div>
-        </li>
+            <h3>Operadores Matemáticos</h3>
+            <ul>
+              <li>+ (soma)</li>
+              <li>- (subtração)</li>
+              <li>* (multiplicação)</li>
+              <li>/ (divisão)</li>
+              <li>% (resto da divisão)</li>
+            </ul>
+          </div>
+        </li>
 
-        <!-- Módulos 6 a 10 -->
-        <li>
-          <button class="accordion">Módulo 6: JavaScript Avançado</button>
-          <div class="panel">
-            <!-- conteúdo do módulo 6 -->
-          </div>
-        </li>
-
-        <li>
-          <button class="accordion">Módulo 7: Manipulação Avançada do DOM</button>
-          <div class="panel">
-            <!-- conteúdo do módulo 7 -->
-          </div>
-        </li>
-
-        <li>
-          <button class="accordion">Módulo 8: Consumo de APIs</button>
-          <div class="panel">
-            <!-- conteúdo do módulo 8 -->
-          </div>
-        </li>
-
-        <li>
-          <button class="accordion">Módulo 9: Introdução ao Backend</button>
-          <div class="panel">
-            <!-- conteúdo do módulo 9 -->
-          </div>
-        </li>
-
-        <li>
-          <button class="accordion">Módulo 10: Projeto Final Avançado</button>
-          <div class="panel">
-            <!-- conteúdo do módulo 10 -->
-          </div>
-        </li>
-
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 - Programação: Do Nood ao Mestre</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
+        <!-- Módulo 2 -->
+        <li>
+          <button class="accordion">Módulo 2: HTML e CSS</button>
+          <div class="panel">
+            <h3>Introdução ao HTML</h3>
+            <p>HTML é a linguagem que estrutura as páginas web.</p>
+            <pre><code>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Minha Página</title>
+  </head>
+  <body>
+    <h1>Olá Mundo</h1>
+    <p>Este é um parágrafo.</p>
+  </body>
 </html>
+            </code></pre>
 
-<li>
-  <button class="accordion">Módulo 6: JavaScript Avançado</button>
-  <div class="panel">
-    <h3>Funções Avançadas</h3>
-    <pre><code>
+            <h3>Estilizando com CSS</h3>
+            <pre><code>
+body {
+  background-color: #121214;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #8257e5;
+}
+            </code></pre>
+          </div>
+        </li>
+
+        <!-- Módulo 3 -->
+        <li>
+          <button class="accordion">Módulo 3: JavaScript</button>
+          <div class="panel">
+            <h3>Funções</h3>
+            <pre><code>
+function saudacao(nome) {
+  console.log("Olá, " + nome + "!");
+}
+
+saudacao("Maria");
+            </code></pre>
+
+            <h3>Eventos</h3>
+            <pre><code>
+document.querySelector("button").addEventListener("click", function() {
+  alert("Você clicou no botão!");
+});
+            </code></pre>
+
+            <h3>Manipulação do DOM</h3>
+            <pre><code>
+document.getElementById("demo").innerText = "Texto alterado!";
+            </code></pre>
+          </div>
+        </li>
+
+        <!-- Módulo 4 -->
+        <li>
+          <button class="accordion">Módulo 4: Git e GitHub</button>
+          <div class="panel">
+            <h3>Conceitos de Git</h3>
+            <pre><code>
+git init
+git add .
+git commit -m "Primeiro commit"
+            </code></pre>
+
+            <h3>Publicando no GitHub</h3>
+            <pre><code>
+git remote add origin https://github.com/seurepo.git
+git push -u origin main
+            </code></pre>
+          </div>
+        </li>
+
+        <!-- Módulo 5 -->
+        <li>
+          <button class="accordion">Módulo 5: Projeto Final</button>
+          <div class="panel">
+            <h3>Planejamento</h3>
+            <p>Organize as funcionalidades e a estrutura do projeto.</p>
+
+            <h3>Desenvolvimento</h3>
+            <p>Implemente o que aprendeu nos módulos anteriores.</p>
+
+            <h3>Testes e Deploy</h3>
+            <p>Teste seu código e publique seu site online.</p>
+          </div>
+        </li>
+
+        <!-- Módulo 6 -->
+        <li>
+          <button class="accordion">Módulo 6: JavaScript Avançado</button>
+          <div class="panel">
+            <h3>Funções Avançadas</h3>
+            <pre><code>
 function saudacaoPersonalizada(nome) {
   return function() {
     console.log("Olá, " + nome + "!");
@@ -116,59 +162,62 @@ function saudacaoPersonalizada(nome) {
 }
 
 const olaAna = saudacaoPersonalizada("Ana");
-olaAna(); // Olá, Ana!
-    </code></pre>
+olaAna();
+            </code></pre>
 
-    <h3>Arrow Functions</h3>
-    <pre><code>
+            <h3>Arrow Functions</h3>
+            <pre><code>
 const soma = (a, b) => a + b;
-console.log(soma(3, 4)); // 7
-    </code></pre>
-  </div>
-</li>
+console.log(soma(3, 4));
+            </code></pre>
+          </div>
+        </li>
 
-<li>
-  <button class="accordion">Módulo 7: Manipulação Avançada do DOM</button>
-  <div class="panel">
-    <h3>Selecionar Elementos</h3>
-    <pre><code>
+        <!-- Módulo 7 -->
+        <li>
+          <button class="accordion">Módulo 7: Manipulação Avançada do DOM</button>
+          <div class="panel">
+            <h3>Selecionar Elementos</h3>
+            <pre><code>
 const btn = document.querySelector("button");
 const itens = document.querySelectorAll(".item");
-    </code></pre>
+            </code></pre>
 
-    <h3>Criar e Remover Elementos</h3>
-    <pre><code>
+            <h3>Criar e Remover Elementos</h3>
+            <pre><code>
 const p = document.createElement("p");
 p.textContent = "Novo parágrafo";
 document.body.appendChild(p);
 
 const elemento = document.getElementById("remover");
 elemento.remove();
-    </code></pre>
-  </div>
-</li>
+            </code></pre>
+          </div>
+        </li>
 
-<li>
-  <button class="accordion">Módulo 8: Consumo de APIs</button>
-  <div class="panel">
-    <h3>O que são APIs?</h3>
-    <p>APIs permitem que seu programa se comunique com serviços externos.</p>
+        <!-- Módulo 8 -->
+        <li>
+          <button class="accordion">Módulo 8: Consumo de APIs</button>
+          <div class="panel">
+            <h3>O que são APIs?</h3>
+            <p>APIs permitem que seu programa se comunique com serviços externos.</p>
 
-    <h3>Exemplo com Fetch</h3>
-    <pre><code>
+            <h3>Usando Fetch</h3>
+            <pre><code>
 fetch("https://api.exemplo.com/dados")
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.error(error));
-    </code></pre>
-  </div>
-</li>
+            </code></pre>
+          </div>
+        </li>
 
-<li>
-  <button class="accordion">Módulo 9: Introdução ao Backend</button>
-  <div class="panel">
-    <h3>Servidor simples com Node.js</h3>
-    <pre><code>
+        <!-- Módulo 9 -->
+        <li>
+          <button class="accordion">Módulo 9: Introdução ao Backend</button>
+          <div class="panel">
+            <h3>Servidor básico com Node.js</h3>
+            <pre><code>
 const http = require('http');
 
 const server = http.createServer((req, res) => {
@@ -179,21 +228,34 @@ const server = http.createServer((req, res) => {
 server.listen(3000, () => {
   console.log('Servidor rodando!');
 });
-    </code></pre>
-  </div>
-</li>
+            </code></pre>
+          </div>
+        </li>
 
-<li>
-  <button class="accordion">Módulo 10: Projeto Final Avançado</button>
-  <div class="panel">
-    <h3>O que deve conter:</h3>
-    <ul>
-      <li>HTML + CSS moderno</li>
-      <li>JavaScript interativo</li>
-      <li>Consumo de API real</li>
-      <li>Backend simples (Node.js)</li>
-      <li>Deploy no GitHub Pages ou outro</li>
-    </ul>
-    <p>Esse projeto será o seu portfólio final. Capriche!</p>
-  </div>
-</li>
+        <!-- Módulo 10 -->
+        <li>
+          <button class="accordion">Módulo 10: Projeto Final Avançado</button>
+          <div class="panel">
+            <h3>Objetivo</h3>
+            <p>Crie um projeto completo que envolva frontend, backend e consumo de APIs.</p>
+            <ul>
+              <li>Planeje funcionalidades</li>
+              <li>Use Git para controle de versão</li>
+              <li>Implemente interatividade com JavaScript</li>
+              <li>Consuma APIs externas</li>
+              <li>Hospede seu projeto online</li>
+            </ul>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Programação: Do Nood ao Mestre</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
