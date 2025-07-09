@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Programação: Do Nood ao Mestre</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
@@ -15,26 +15,60 @@
   <main>
     <section class="modules">
       <h2>Módulos do Curso</h2>
-      <ul>
+      <ul id="modulesList">
         <li>
-          <h3>Módulo 1: Lógica de Programação</h3>
-          <p>Aprenda os fundamentos da lógica com exemplos e exercícios práticos.</p>
+          <button class="accordion">Módulo 1: Lógica de Programação</button>
+          <div class="panel">
+            <p>Aprenda os fundamentos da lógica com exemplos e exercícios práticos.</p>
+            <ul>
+              <li>O que é Programação?</li>
+              <li>Variáveis e Tipos de Dados</li>
+              <li>Operadores Matemáticos</li>
+            </ul>
+          </div>
         </li>
         <li>
-          <h3>Módulo 2: HTML e CSS</h3>
-          <p>Crie suas primeiras páginas e estilize com CSS moderno.</p>
+          <button class="accordion">Módulo 2: HTML e CSS</button>
+          <div class="panel">
+            <p>Crie suas primeiras páginas e estilize com CSS moderno.</p>
+            <ul>
+              <li>Introdução ao HTML</li>
+              <li>Estilos com CSS</li>
+            </ul>
+          </div>
         </li>
         <li>
-          <h3>Módulo 3: JavaScript</h3>
-          <p>Dê vida às páginas com interatividade e lógica no navegador.</p>
+          <button class="accordion">Módulo 3: JavaScript</button>
+          <div class="panel">
+            <p>Dê vida às páginas com interatividade e lógica no navegador.</p>
+            <ul>
+              <li>Introdução ao JavaScript</li>
+              <li>Funções e Eventos</li>
+              <li>Manipulação do DOM</li>
+            </ul>
+          </div>
         </li>
         <li>
-          <h3>Módulo 4: Git e GitHub</h3>
-          <p>Controle de versões e publicação de sites no GitHub Pages.</p>
+          <button class="accordion">Módulo 4: Git e GitHub</button>
+          <div class="panel">
+            <p>Controle de versões e publicação de sites no GitHub Pages.</p>
+            <ul>
+              <li>Conceitos de Git</li>
+              <li>GitHub e Repositórios</li>
+              <li>Publicando no GitHub Pages</li>
+            </ul>
+          </div>
         </li>
         <li>
-          <h3>Módulo 5: Projeto Final</h3>
-          <p>Desenvolva um projeto completo e interativo usando tudo o que aprendeu.</p>
+          <button class="accordion">Módulo 5: Projeto Final</button>
+          <div class="panel">
+            <p>Desenvolva um projeto completo e interativo usando tudo o que aprendeu.</p>
+            <ul>
+              <li>Planejamento</li>
+              <li>Desenvolvimento</li>
+              <li>Testes e Deploy</li>
+            </ul>
+          </div>
         </li>
       </ul>
     </section>
@@ -43,5 +77,7 @@
   <footer>
     <p>&copy; 2025 - Programação: Do Nood ao Mestre</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
