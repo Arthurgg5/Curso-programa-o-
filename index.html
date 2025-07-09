@@ -488,3 +488,158 @@ server.listen(3000, () => {
     </ol>
   </article>
 </section>
+
+<section id="quiz" class="quiz-section">
+  <h2>Quiz Interativo - Teste seus conhecimentos!</h2>
+  <div id="quiz-container">
+    <div id="question"></div>
+    <div id="options"></div>
+    <button id="submit-btn" disabled>Responder</button>
+    <div id="feedback"></div>
+  </div>
+  <div id="result" style="display:none;">
+    <h3>Você acertou <span id="score"></span> de <span id="total"></span> perguntas!</h3>
+    <button id="restart-btn">Refazer Quiz</button>
+  </div>
+</section>
+
+<style>
+  .quiz-section {
+    background-color: #1e1e2f;
+    color: #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 40px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  #options label {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  #submit-btn, #restart-btn {
+    background-color: #8257e5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  #submit-btn:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+  }
+  #feedback {
+    margin-top: 15px;
+    font-weight: bold;
+  }
+</style>
+
+<script>
+  const quizData = [
+    {
+      question: "O que é uma variável em programação?",
+      options: [
+        "Um tipo de dado numérico",
+        "Um espaço para guardar informações",
+        "Uma função que retorna valores",
+        "Um operador matemático"
+      ],
+      answer: 1
+    },
+    {
+      question: "Qual dessas linguagens é usada para estilizar páginas web?",
+      options: ["HTML", "JavaScript", "CSS", "Python"],
+      answer: 2
+    },
+    {
+      question: "Para que serve o Git?",
+      options: [
+        "Para escrever código HTML",
+        "Para controle de versão do código",
+        "Para executar programas",
+        "Para desenhar imagens"
+      ],
+      answer: 1
+    }
+  ];
+
+  let currentQuestion = 0;
+  let score = 0;
+
+  const questionEl = document.getElementById('question');
+  const optionsEl = document.getElementById('options');
+  const submitBtn = document.getElementById('submit-btn');
+  const feedbackEl = document.getElementById('feedback');
+  const resultEl = document.getElementById('result');
+  const scoreEl = document.getElementById('score');
+  const totalEl = document.getElementById('total');
+  const restartBtn = document.getElementById('restart-btn');
+
+  function loadQuestion() {
+    feedbackEl.textContent = '';
+    submitBtn.disabled = true;
+    optionsEl.innerHTML = '';
+    const q = quizData[currentQuestion];
+    questionEl.textContent = q.question;
+
+    q.options.forEach((option, index) => {
+      const label = document.createElement('label');
+      label.innerHTML = `<input type="radio" name="option" value="${index}"> ${option}`;
+      optionsEl.appendChild(label);
+    });
+
+    const radios = optionsEl.querySelectorAll('input[type="radio"]');
+    radios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        submitBtn.disabled = false;
+        feedbackEl.textContent = '';
+      });
+    });
+  }
+
+  submitBtn.addEventListener('click', () => {
+    const selected = optionsEl.querySelector('input[name="option"]:checked');
+    if (!selected) return;
+
+    const answer = parseInt(selected.value);
+    if (answer === quizData[currentQuestion].answer) {
+      score++;
+      feedbackEl.textContent = 'Resposta correta! 🎉';
+      feedbackEl.style.color = '#4CAF50';
+    } else {
+      feedbackEl.textContent = 'Resposta incorreta. 😕';
+      feedbackEl.style.color = '#f44336';
+    }
+
+    submitBtn.disabled = true;
+
+    setTimeout(() => {
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        showResult();
+      }
+    }, 1500);
+  });
+
+  function showResult() {
+    document.getElementById('quiz-container').style.display = 'none';
+    resultEl.style.display = 'block';
+    scoreEl.textContent = score;
+    totalEl.textContent = quizData.length;
+  }
+
+  restartBtn.addEventListener('click', () => {
+    currentQuestion = 0;
+    score = 0;
+    resultEl.style.display = 'none';
+    document.getElementById('quiz-container').style.display = 'block';
+    loadQuestion();
+  });
+
+  loadQuestion();
+</script>
