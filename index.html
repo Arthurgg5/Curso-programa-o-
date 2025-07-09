@@ -103,3 +103,97 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+<li>
+  <button class="accordion">Módulo 6: JavaScript Avançado</button>
+  <div class="panel">
+    <h3>Funções Avançadas</h3>
+    <pre><code>
+function saudacaoPersonalizada(nome) {
+  return function() {
+    console.log("Olá, " + nome + "!");
+  };
+}
+
+const olaAna = saudacaoPersonalizada("Ana");
+olaAna(); // Olá, Ana!
+    </code></pre>
+
+    <h3>Arrow Functions</h3>
+    <pre><code>
+const soma = (a, b) => a + b;
+console.log(soma(3, 4)); // 7
+    </code></pre>
+  </div>
+</li>
+
+<li>
+  <button class="accordion">Módulo 7: Manipulação Avançada do DOM</button>
+  <div class="panel">
+    <h3>Selecionar Elementos</h3>
+    <pre><code>
+const btn = document.querySelector("button");
+const itens = document.querySelectorAll(".item");
+    </code></pre>
+
+    <h3>Criar e Remover Elementos</h3>
+    <pre><code>
+const p = document.createElement("p");
+p.textContent = "Novo parágrafo";
+document.body.appendChild(p);
+
+const elemento = document.getElementById("remover");
+elemento.remove();
+    </code></pre>
+  </div>
+</li>
+
+<li>
+  <button class="accordion">Módulo 8: Consumo de APIs</button>
+  <div class="panel">
+    <h3>O que são APIs?</h3>
+    <p>APIs permitem que seu programa se comunique com serviços externos.</p>
+
+    <h3>Exemplo com Fetch</h3>
+    <pre><code>
+fetch("https://api.exemplo.com/dados")
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+    </code></pre>
+  </div>
+</li>
+
+<li>
+  <button class="accordion">Módulo 9: Introdução ao Backend</button>
+  <div class="panel">
+    <h3>Servidor simples com Node.js</h3>
+    <pre><code>
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Olá do backend!');
+});
+
+server.listen(3000, () => {
+  console.log('Servidor rodando!');
+});
+    </code></pre>
+  </div>
+</li>
+
+<li>
+  <button class="accordion">Módulo 10: Projeto Final Avançado</button>
+  <div class="panel">
+    <h3>O que deve conter:</h3>
+    <ul>
+      <li>HTML + CSS moderno</li>
+      <li>JavaScript interativo</li>
+      <li>Consumo de API real</li>
+      <li>Backend simples (Node.js)</li>
+      <li>Deploy no GitHub Pages ou outro</li>
+    </ul>
+    <p>Esse projeto será o seu portfólio final. Capriche!</p>
+  </div>
+</li>
