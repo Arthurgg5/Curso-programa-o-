@@ -152,3 +152,11 @@ footer {
   font-size: 0.9rem;
   text-align: center;
 }
+.accordion {
+  margin-bottom: 5px; /* diminui o espaço entre os botões */
+}
+
+.panel {
+  padding: 10px 20px;
+  margin-top: -5px; /* cola mais o conteúdo ao botão */
+}
