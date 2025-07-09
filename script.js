@@ -1,6 +1,3 @@
-
-// script.js simplificado com base nos módulos enviados
-// Substitua este conteúdo pelo conteúdo completo que inclui todos os módulos
 const modules = [
   {
     id: 1,
@@ -9,70 +6,82 @@ const modules = [
       {
         id: 1,
         title: "O que é Programação?",
-        content: "<p>Programação é o processo de criar um conjunto de instruções...</p>"
+        content: "<p>Programação é o processo de criar um conjunto de instruções que um computador pode entender e executar para realizar tarefas específicas.</p>"
+      },
+      {
+        id: 2,
+        title: "Variáveis e Tipos de Dados",
+        content: "<p>Variáveis são como caixas onde você armazena informações. Os tipos de dados dizem que tipo de informação está guardada, como números, texto, etc.</p>"
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: "Módulo 2: HTML e CSS Básico",
+    lessons: [
+      {
+        id: 1,
+        title: "Introdução ao HTML",
+        content: "<p>HTML é a linguagem que usamos para criar páginas da web.</p>"
+      },
+      {
+        id: 2,
+        title: "Estilos com CSS",
+        content: "<p>CSS é o que dá estilo e aparência às páginas HTML.</p>"
       }
     ]
   }
-  // Outros módulos seguem aqui...
 ];
 
-const modulesList = document.getElementById("modulesList");
-const content = document.getElementById("content");
+const modulesList = document.getElementById('modulesList');
+const content = document.getElementById('content');
 
-function clearActiveButtons() {
-  const buttons = document.querySelectorAll(".sidebar button");
-  buttons.forEach((btn) => btn.classList.remove("active"));
-}
+function showModules() {
+  content.innerHTML = `<h2>Bem-vindo ao curso!</h2><p>Selecione um módulo para começar.</p>`;
+  modulesList.innerHTML = '';
 
-function showModuleLessons(moduleId) {
-  const module = modules.find((m) => m.id === moduleId);
-  if (!module) return;
-
-  content.innerHTML = `<h2>${module.title}</h2>`;
-  const ul = document.createElement("ul");
-  ul.style.listStyle = "none";
-  ul.style.paddingLeft = "0";
-
-  module.lessons.forEach((lesson) => {
-    const li = document.createElement("li");
-    li.style.marginBottom = "10px";
-
-    const btn = document.createElement("button");
-    btn.textContent = lesson.title;
-    btn.style.width = "100%";
-    btn.style.background = "#2563eb";
-    btn.style.color = "white";
-    btn.style.border = "none";
-    btn.style.padding = "10px";
-    btn.style.borderRadius = "4px";
-    btn.style.cursor = "pointer";
-    btn.style.textAlign = "left";
-
-    btn.addEventListener("click", () => {
-      content.innerHTML = `<button id='backButton'>← Voltar</button><h2>${lesson.title}</h2>${lesson.content}`;
-      document.getElementById("backButton").addEventListener("click", () => {
-        showModuleLessons(moduleId);
-      });
-    });
-
+  modules.forEach(mod => {
+    const li = document.createElement('li');
+    const btn = document.createElement('button');
+    btn.textContent = mod.title;
+    btn.onclick = () => showLessons(mod.id);
     li.appendChild(btn);
-    ul.appendChild(li);
+    modulesList.appendChild(li);
   });
-
-  content.appendChild(ul);
 }
 
-modules.forEach((module) => {
-  const li = document.createElement("li");
-  const btn = document.createElement("button");
-  btn.textContent = module.title;
+function showLessons(moduleId) {
+  const mod = modules.find(m => m.id === moduleId);
+  if (!mod) return;
 
-  btn.addEventListener("click", () => {
-    clearActiveButtons();
-    btn.classList.add("active");
-    showModuleLessons(module.id);
+  content.innerHTML = `<h2>${mod.title}</h2><ul id="lessonsList"></ul><button id="backButton">← Voltar</button>`;
+  document.getElementById('backButton').onclick = () => showModules();
+
+  const lessonsList = document.getElementById('lessonsList');
+  mod.lessons.forEach(lesson => {
+    const li = document.createElement('li');
+    const btn = document.createElement('button');
+    btn.textContent = lesson.title;
+    btn.onclick = () => showLessonContent(moduleId, lesson.id);
+    li.appendChild(btn);
+    lessonsList.appendChild(li);
   });
+}
 
-  li.appendChild(btn);
-  modulesList.appendChild(li);
-});
+function showLessonContent(moduleId, lessonId) {
+  const mod = modules.find(m => m.id === moduleId);
+  if (!mod) return;
+
+  const lesson = mod.lessons.find(l => l.id === lessonId);
+  if (!lesson) return;
+
+  content.innerHTML = `
+    <button id="backButton">← Voltar</button>
+    <h2>${lesson.title}</h2>
+    <div>${lesson.content}</div>
+  `;
+
+  document.getElementById('backButton').onclick = () => showLessons(moduleId);
+}
+
+showModules();
