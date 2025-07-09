@@ -130,3 +130,25 @@ footer {
     padding-right: 1rem;
   }
 }
+
+/* Deixa a página com altura mínima da tela e organiza tudo verticalmente */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* O main ocupa o espaço disponível */
+main {
+  flex: 1;
+}
+
+/* Footer fica no final da página */
+footer {
+  background-color: #202024;
+  padding: 1rem 2rem;
+  color: #8d8d99;
+  font-size: 0.9rem;
+  text-align: center;
+}
