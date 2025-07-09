@@ -54,29 +54,50 @@ main {
 }
 
 .modules li {
-  background-color: #202024;
   margin-bottom: 1rem;
-  padding: 1.3rem 1.8rem;
+}
+
+/* Accordion style */
+.accordion {
+  background-color: #202024;
+  color: #fff;
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  font-size: 1.3rem;
   border-radius: 8px;
   transition: background-color 0.3s ease;
   box-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }
 
-.modules li:hover {
+.accordion:hover,
+.accordion.active {
   background-color: #8257e5;
-  cursor: pointer;
   box-shadow: 0 4px 12px rgba(130, 87, 229, 0.7);
 }
 
-.modules h3 {
-  color: #fff;
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
+.panel {
+  background-color: #121214;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding-left: 1rem;
+  border-left: 3px solid #8257e5;
+  border-radius: 0 8px 8px 0;
 }
 
-.modules p {
+.panel p {
+  padding: 1rem 1.5rem 0 1.5rem;
   color: #c4c4cc;
-  font-size: 1rem;
+}
+
+.panel ul {
+  padding: 0 2rem 1rem 2rem;
+  color: #a8a8b3;
+  list-style: disc;
 }
 
 footer {
@@ -88,7 +109,7 @@ footer {
   margin-top: auto;
 }
 
-/* Responsividade simples */
+/* Responsividade */
 @media (max-width: 600px) {
   header h1 {
     font-size: 1.8rem;
@@ -99,7 +120,13 @@ footer {
   .modules h2 {
     font-size: 1.5rem;
   }
-  .modules li {
-    padding: 1rem 1.2rem;
+  .accordion {
+    font-size: 1.1rem;
+    padding: 0.8rem 1rem;
+  }
+  .panel p,
+  .panel ul {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
