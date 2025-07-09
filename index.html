@@ -16,60 +16,157 @@
     <section class="modules">
       <h2>Módulos do Curso</h2>
       <ul id="modulesList">
+
         <li>
           <button class="accordion">Módulo 1: Lógica de Programação</button>
           <div class="panel">
-            <p>Aprenda os fundamentos da lógica com exemplos e exercícios práticos.</p>
+            <h3>O que é Programação?</h3>
+            <p>Programação é o processo de criar um conjunto de instruções que dizem ao computador o que fazer.</p>
+
+            <h3>Variáveis e Tipos de Dados</h3>
+            <p>Variáveis são como caixas que guardam informações. Exemplos de tipos:</p>
             <ul>
-              <li>O que é Programação?</li>
-              <li>Variáveis e Tipos de Dados</li>
-              <li>Operadores Matemáticos</li>
+              <li><strong>Number:</strong> Números, como 10, 3.14</li>
+              <li><strong>String:</strong> Texto, como "Olá Mundo"</li>
+              <li><strong>Boolean:</strong> Verdadeiro (true) ou falso (false)</li>
             </ul>
+
+            <h3>Exemplo de código em JavaScript</h3>
+            <pre><code>
+let idade = 14;
+let nome = "Ana";
+let maiorDeIdade = false;
+
+console.log("Nome:", nome);
+console.log("Idade:", idade);
+console.log("É maior de idade?", maiorDeIdade);
+            </code></pre>
+
+            <h3>Operadores Matemáticos</h3>
+            <p>Usados para fazer contas:</p>
+            <ul>
+              <li>+ (soma)</li>
+              <li>- (subtração)</li>
+              <li>* (multiplicação)</li>
+              <li>/ (divisão)</li>
+              <li>% (resto da divisão)</li>
+            </ul>
+
+            <h3>Exemplo de cálculo simples</h3>
+            <pre><code>
+let a = 10;
+let b = 3;
+let soma = a + b;
+let resto = a % b;
+
+console.log("Soma:", soma);
+console.log("Resto da divisão:", resto);
+            </code></pre>
           </div>
         </li>
+
         <li>
           <button class="accordion">Módulo 2: HTML e CSS</button>
           <div class="panel">
-            <p>Crie suas primeiras páginas e estilize com CSS moderno.</p>
-            <ul>
-              <li>Introdução ao HTML</li>
-              <li>Estilos com CSS</li>
-            </ul>
+            <h3>Introdução ao HTML</h3>
+            <p>HTML é a linguagem que estrutura as páginas web.</p>
+            <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Minha Página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Olá Mundo&lt;/h1&gt;
+    &lt;p&gt;Este é um parágrafo.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+
+            <h3>Estilizando com CSS</h3>
+            <p>CSS deixa sua página bonita e estilizada.</p>
+            <pre><code>
+body {
+  background-color: #121214;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #8257e5;
+}
+            </code></pre>
           </div>
         </li>
+
         <li>
           <button class="accordion">Módulo 3: JavaScript</button>
           <div class="panel">
-            <p>Dê vida às páginas com interatividade e lógica no navegador.</p>
-            <ul>
-              <li>Introdução ao JavaScript</li>
-              <li>Funções e Eventos</li>
-              <li>Manipulação do DOM</li>
-            </ul>
+            <h3>Introdução ao JavaScript</h3>
+            <p>JavaScript deixa a página interativa e dinâmica.</p>
+
+            <h3>Funções</h3>
+            <p>Funções são blocos de código que executam uma tarefa.</p>
+            <pre><code>
+function saudacao(nome) {
+  console.log("Olá, " + nome + "!");
+}
+
+saudacao("Maria");
+            </code></pre>
+
+            <h3>Eventos</h3>
+            <p>Eventos são ações que o usuário faz, como clicar um botão.</p>
+            <pre><code>
+document.querySelector("button").addEventListener("click", function() {
+  alert("Você clicou no botão!");
+});
+            </code></pre>
+
+            <h3>Manipulação do DOM</h3>
+            <p>Você pode alterar o conteúdo da página usando JavaScript.</p>
+            <pre><code>
+document.getElementById("demo").innerText = "Texto alterado!";
+            </code></pre>
           </div>
         </li>
+
         <li>
           <button class="accordion">Módulo 4: Git e GitHub</button>
           <div class="panel">
-            <p>Controle de versões e publicação de sites no GitHub Pages.</p>
-            <ul>
-              <li>Conceitos de Git</li>
-              <li>GitHub e Repositórios</li>
-              <li>Publicando no GitHub Pages</li>
-            </ul>
+            <h3>Conceitos de Git</h3>
+            <p>Git é um sistema de controle de versões para seu código.</p>
+            <pre><code>
+git init
+git add .
+git commit -m "Primeiro commit"
+            </code></pre>
+
+            <h3>GitHub e Repositórios</h3>
+            <p>GitHub é uma plataforma para armazenar e compartilhar seu código.</p>
+
+            <h3>Publicando no GitHub Pages</h3>
+            <p>Você pode publicar sites gratuitamente no GitHub.</p>
+            <pre><code>
+git push origin main
+            </code></pre>
           </div>
         </li>
+
         <li>
           <button class="accordion">Módulo 5: Projeto Final</button>
           <div class="panel">
-            <p>Desenvolva um projeto completo e interativo usando tudo o que aprendeu.</p>
-            <ul>
-              <li>Planejamento</li>
-              <li>Desenvolvimento</li>
-              <li>Testes e Deploy</li>
-            </ul>
+            <h3>Planejamento</h3>
+            <p>Organize suas ideias e funcionalidades do projeto.</p>
+
+            <h3>Desenvolvimento</h3>
+            <p>Coloque em prática tudo que aprendeu para construir o projeto.</p>
+
+            <h3>Testes e Deploy</h3>
+            <p>Teste seu projeto e publique para o mundo ver!</p>
           </div>
         </li>
+
       </ul>
     </section>
   </main>
