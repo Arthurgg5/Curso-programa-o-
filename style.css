@@ -144,19 +144,3 @@ main {
   flex: 1;
 }
 
-/* Footer fica no final da página */
-footer {
-  background-color: #202024;
-  padding: 1rem 2rem;
-  color: #8d8d99;
-  font-size: 0.9rem;
-  text-align: center;
-}
-.accordion {
-  margin-bottom: 5px; /* diminui o espaço entre os botões */
-}
-
-.panel {
-  padding: 10px 20px;
-  margin-top: -5px; /* cola mais o conteúdo ao botão */
-}
